@@ -1,0 +1,56 @@
+TODO: If there are "spots" for memory output error
+===================================================================
+Reminder:   Computer only has 16 Bytes of memory
+
+Here are the Assembly language OP codes that is implemented
+
+- NOP - No Operation (0000)
+- LOA - Load from memory location *A* (0001)
+- ADD - Add to Register A (0010)
+- SUB - Subtract from Register A (0011)
+- STA - Store Register A in memory (0100)
+- OUT - Output Register A (0101)
+- JMP - Jump to address (0110)
+- LOI - Load immediatly to Register A (0111)
+- JC - Jump if cary flag is set (1000)
+- HLT - Halt Execution (1111)
+===================================================================
+
+Example of input program
+
+0x0: LDI 0x1
+0x1: STA 0xe
+0x2: LDI 0x0
+0x3: OUT
+0x4: ADD 0xE
+0x5: STA 0xF
+0x6: LDA 0xE
+0x7: STA 0xD
+0x8: LDA 0xF
+0x9: STA 0xE
+0xA: LDA 0xD
+0xB: JIC  0x0
+0xC: JMP 0x3
+0xD: THIS IS FREE MEMORY SPACE DONT PUT THIS IN SOURCE FILE
+0xE: THIS IS FREE MEMORY SPACE DONT PUT THIS IN SOURCE FILE
+0xF: THIS IS FREE MEMORY SPACE DONT PUT THIS IN SOURCE FILE
+
+===================================================================
+
+Example of Output (no space in between)
+
+0000 0111 0001
+0001 0100 1110
+0010 0111 0000
+0011 0101 0000
+0100 0010 1110
+0101 0100 1111
+0110 0001 1110
+0111 0100 1101
+1000 0001 1111
+1001 0100 1110
+1010 0001 1101
+1011 1000 0000
+1100 0110 0011
+
+===================================================================
